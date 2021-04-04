@@ -6,3 +6,36 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
+
+class BookListViewModel : ObservableObject
+{
+    @Published var booksList : [Book] = [Book(),Book()]
+    @Published var error : String? = nil
+    @Published var showProgressBar : Bool = true
+    var cancellables = Set<AnyCancellable>()
+
+    func apiNetworRequest() {
+                // self.showProgressBar = false
+
+//        executeAPI(url: booksListurl, urlRequest: booksListUrlRequest, model: BooksListResponseModel.self) .receive(on: DispatchQueue.main).sink { (requestStaus) in
+//            switch(requestStaus) {
+//            case .failure(let error) :
+//                self.error = error.localizedDescription
+//            case .finished :
+//               print("network request successful")
+//            }
+//        } receiveValue: { booksListResponseModel in
+//            print("Receive value")
+//            if let booksList = booksListResponseModel.booksList {
+//                print("Receive value")
+//
+//                self.booksList = booksList
+//            }
+//
+//            self.showProgressBar = false
+//        }.store(in: &cancellables)
+//
+    }
+}

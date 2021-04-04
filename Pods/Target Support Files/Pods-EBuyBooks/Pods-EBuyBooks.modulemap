@@ -1,0 +1,6 @@
+framework module Pods_EBuyBooks {
+  umbrella header "Pods-EBuyBooks-umbrella.h"
+
+  export *
+  module * { export * }
+}

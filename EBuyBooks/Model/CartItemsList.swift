@@ -6,3 +6,12 @@
 //
 
 import Foundation
+class CartItemsListResponse :BaseResponse{
+    override var statusCode : Int?{
+        didSet {
+            super.statusCode = statusCode
+        }
+    }
+    var cartItems : [Book]?
+    
+}

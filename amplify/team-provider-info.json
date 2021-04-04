@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ebuybooks-dev-115136-authRole",
+      "UnauthRoleArn": "arn:aws:iam::124883821192:role/amplify-ebuybooks-dev-115136-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::124883821192:role/amplify-ebuybooks-dev-115136-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ebuybooks-dev-115136-deployment",
+      "UnauthRoleName": "amplify-ebuybooks-dev-115136-unauthRole",
+      "StackName": "amplify-ebuybooks-dev-115136",
+      "StackId": "arn:aws:cloudformation:us-east-1:124883821192:stack/amplify-ebuybooks-dev-115136/609fdbd0-83c4-11eb-9e4f-0aaeca0d89d1"
+    },
+    "categories": {
+      "auth": {
+        "ebuybooksf7558db4": {}
+      },
+      "storage": {
+        "ebuybooksc56df9c0": {
+          "bucketName": "ebuybooks-app-bucket",
+          "region": "us-east-1"
+        }
+      }
+    }
+  }
+}

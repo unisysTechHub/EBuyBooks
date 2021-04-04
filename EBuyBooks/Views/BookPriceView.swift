@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct BookPriceView: View {
+    
+
+     var header : String
+     var price : Double
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+            VStack {
+                Text(header).frame(width: geo.size.width, height: geo.size.height/2, alignment: .center).font(.headline)
+        Text("$\(String(price))").frame(width: geo.size.width, height: geo.size.height/2, alignment: .center)    }
+        }
     }
 }
 
 struct BookPriceView_Previews: PreviewProvider {
     static var previews: some View {
-        BookPriceView()
+        BookPriceView(header:"Price", price:  500.00)
     }
 }

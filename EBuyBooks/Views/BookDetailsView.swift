@@ -8,13 +8,55 @@
 import SwiftUI
 
 struct BookDetailsView: View {
+    var bookModel : Book
+    var uiImage = (UIApplication.shared.delegate as! AppDelegate).uiImage!;
+    @StateObject var addBookToCartViewModel = AddToCartViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+           
+                VStack {
+                    HStack(alignment: .top, spacing: nil, content: {
+                         
+                        Image(uiImage :uiImage ).fixedSize().frame(width: 100, height: 200 , alignment: .center)
+//                        Image("swiftbookimage").fixedSize().frame(width: 100, height: 200 , alignment: .center)
+                        GeometryReader { geo in
+                            VStack(alignment: .center, spacing: nil, content: {
+                                
+                                BookDetailsRow(header: "Title", name: bookModel.title!).frame(width: geo.size.width, height: geo.size.height/4, alignment: .center)
+                                Divider().background(Color.black).padding(0)
+                                BookDetailsRow(header: "Author", name: bookModel.author!).frame(width: geo.size.width, height: geo.size.height/4, alignment: .center)
+                                Divider().background(Color.black).padding(0)
+                                BookPriceView(header: "Price", price:  bookModel.price!).frame(width: geo.size.width, height: geo.size.height/4, alignment: .center)
+                                
+                                
+                            }).frame(width: geo.size.width - CGFloat(16), height: 184, alignment: .center).padding(8).alignmentGuide(.top, computeValue: { dimension in
+                                dimension[.top]
+                            })
+                        }
+                        
+                    })
+                    
+                    Divider()
+                    HStack {
+                        
+                        Button("AddToCart", action: addBookToCart).frame(width: geo.size.width/2, height: 40, alignment: .center)
+
+                        
+                    }.frame(width: geo.size.width, height: 40, alignment: .center)
+                    
+                }.frame(width: geo.size.width - CGFloat(8), height: 250, alignment: .center)
+                .border(Color.black, width: 2)
+                .cornerRadius(3.0).padding(4)
+            }
+        
+    }
+    func  addBookToCart()  {
+        addBookToCartViewModel.apiNetworkRequest(book: self.bookModel)
     }
 }
 
 struct BookDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailsView()
+        BookDetailsView(bookModel: Book())
     }
 }

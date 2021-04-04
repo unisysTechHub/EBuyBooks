@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct BookDetailsRow: View {
+    var header : String
+    var name : String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geo in
+            VStack {
+                Text(header).frame(width: geo.size.width, height: geo.size.height/2, alignment: .center).font(.headline)
+        Text(name).frame(width: geo.size.width, height: geo.size.height/2, alignment: .center)    }
+        }
     }
 }
 
 struct BookDetailsRow_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailsRow()
+        BookDetailsRow(header: "Author", name: "AuthorName")
     }
 }

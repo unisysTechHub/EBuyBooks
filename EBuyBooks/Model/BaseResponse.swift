@@ -6,3 +6,6 @@
 //
 
 import Foundation
+class BaseResponse : Decodable{
+    var statusCode : Int?
+}

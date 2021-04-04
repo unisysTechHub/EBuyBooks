@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import Amplify
+import AmplifyPlugins
+import AWSMobileClient
+import SwiftPackage
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
+    var uiImage : UIImage?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        configureAmplify()
+
         return true
     }
 
@@ -31,6 +37,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func applicationWillTerminate(_ application: UIApplication) {
+        Amplify.Auth.signOut()
 
+    }
+}
+
+func configureAmplify() {
+   
+   do {
+    try Amplify.add(plugin: AWSCognitoAuthPlugin())
+    try Amplify.add(plugin: AWSS3StoragePlugin())
+       try Amplify.configure()
+
+       print("Initialized Amplify");
+   } catch {
+       // simplified error handling for the tutorial
+       print("Could not initialize Amplify: \(error)")
+   }
 }
 
