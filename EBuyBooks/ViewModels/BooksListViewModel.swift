@@ -17,25 +17,29 @@ class BookListViewModel : ObservableObject
     var cancellables = Set<AnyCancellable>()
 
     func apiNetworRequest() {
+        #warning("test warning message")
+       
                 // self.showProgressBar = false
 
-//        executeAPI(url: booksListurl, urlRequest: booksListUrlRequest, model: BooksListResponseModel.self) .receive(on: DispatchQueue.main).sink { (requestStaus) in
-//            switch(requestStaus) {
-//            case .failure(let error) :
-//                self.error = error.localizedDescription
-//            case .finished :
-//               print("network request successful")
-//            }
-//        } receiveValue: { booksListResponseModel in
-//            print("Receive value")
-//            if let booksList = booksListResponseModel.booksList {
-//                print("Receive value")
-//
-//                self.booksList = booksList
-//            }
-//
-//            self.showProgressBar = false
-//        }.store(in: &cancellables)
-//
+        executeAPI(url: booksListurl, urlRequest: booksListUrlRequest, model: BooksListResponseModel.self) .receive(on: DispatchQueue.main).sink { (requestStaus) in
+            self.showProgressBar = false
+
+            switch(requestStaus) {
+            case .failure(let error) :
+                self.error = error.localizedDescription
+            case .finished :
+               print("network request successful")
+            }
+        } receiveValue: { booksListResponseModel in
+            print("Receive value")
+            if let booksList = booksListResponseModel.booksList {
+                print("Receive value")
+
+                self.booksList = booksList
+            }
+
+            self.showProgressBar = false
+        }.store(in: &cancellables)
+
     }
 }

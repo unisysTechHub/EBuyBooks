@@ -9,15 +9,16 @@ import SwiftUI
 
 struct BookDetailsView: View {
     var bookModel : Book
-    var uiImage = (UIApplication.shared.delegate as! AppDelegate).uiImage!;
+   @ObservedObject var bookImageStore = BookImageStore()
     @StateObject var addBookToCartViewModel = AddToCartViewModel()
     var body: some View {
         GeometryReader { geo in
            
                 VStack {
                     HStack(alignment: .top, spacing: nil, content: {
-                         
-                        Image(uiImage :uiImage ).fixedSize().frame(width: 100, height: 200 , alignment: .center)
+                        Image(uiImage :self.bookImageStore.bookImage! ).fixedSize().frame(width: 100, height: 200 , alignment: .center).onAppear(){
+                            bookImageStore.loadImage(s3ObejctKey: "")
+                        }
 //                        Image("swiftbookimage").fixedSize().frame(width: 100, height: 200 , alignment: .center)
                         GeometryReader { geo in
                             VStack(alignment: .center, spacing: nil, content: {

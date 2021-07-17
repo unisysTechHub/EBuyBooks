@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
+        print("@Rames willConnect to function called")
         let contentView = ContentView()
         
         // Use a UIHostingController as window root view controller.
@@ -45,8 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 print("value : \(value)")
             }
             print("Signe in \(AWSMobileClient.default().userSub)")
-            self.window?.rootViewController = UIHostingController(rootView: ContentView())
-            self.window?.makeKeyAndVisible()
+            
            // self.listFilesInS3Storage()
             let storageOperation = Amplify.Storage.downloadData(key: "books/B1001_Image.jpeg")
             let progressSink = storageOperation.progressPublisher.sink { progress in print("Progress: \(progress)") }.store(in: &self.cancellables)
@@ -57,6 +57,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             receiveValue: { data in
                 print("Ramesh file dowlaoded")
+                self.window?.rootViewController = UIHostingController(rootView: ContentView())
+                self.window?.makeKeyAndVisible()
                 ( UIApplication.shared.delegate as? AppDelegate)?.uiImage =   UIImage(data: data)
                 print("Completed: \(data)")
                 self.window?.rootViewController = UIHostingController(rootView: ContentView())

@@ -20,7 +20,6 @@ struct ContentView: View {
         }.frame(width: screen_width, height: screen_height, alignment: .top).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         
         
-        
     }
 }
 
