@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+@testable import EBuyBooks
 class EBuyBooksUITests: XCTestCase {
 
     override func setUpWithError() throws {

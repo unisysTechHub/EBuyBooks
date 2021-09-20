@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable EBuyBookssdfdf
 
 class EBooksPrimeVersionUITests: XCTestCase {
 
@@ -31,6 +32,7 @@ class EBooksPrimeVersionUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+       
     }
    
 }
