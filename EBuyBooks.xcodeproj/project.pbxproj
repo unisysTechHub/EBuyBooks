@@ -33,6 +33,9 @@
 		0C5EA2B425FCC56E00A6BAAB /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EA29625FCC4D900A6BAAB /* amplifyconfiguration.json */; };
 		0C654234269C342900358FDA /* BookImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C654233269C342900358FDA /* BookImageStore.swift */; };
 		0C654237269C5E6200358FDA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C654236269C5E6200358FDA /* ImageCache.swift */; };
+		0C72E08F26F628C700FF46DA /* EBuyURLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72E08E26F628C700FF46DA /* EBuyURLPath.swift */; };
+		0C72E09126F62F5300FF46DA /* EbuyRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72E09026F62F5300FF46DA /* EbuyRequestBuilder.swift */; };
+		0C72E09326F6301D00FF46DA /* EbuyBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72E09226F6301D00FF46DA /* EbuyBaseRequest.swift */; };
 		0C7ED7792615F63F00296B26 /* EBooksPrimeVersionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ED7782615F63F00296B26 /* EBooksPrimeVersionApp.swift */; };
 		0C7ED77B2615F63F00296B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ED77A2615F63F00296B26 /* ContentView.swift */; };
 		0C7ED77D2615F64000296B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7ED77C2615F64000296B26 /* Assets.xcassets */; };
@@ -111,6 +114,10 @@
 		0C5EA29625FCC4D900A6BAAB /* amplifyconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		0C654233269C342900358FDA /* BookImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImageStore.swift; sourceTree = "<group>"; };
 		0C654236269C5E6200358FDA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		0C72E08B26F6259400FF46DA /* EbuyBook.app.Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EbuyBook.app.Config.xcconfig; sourceTree = "<group>"; };
+		0C72E08E26F628C700FF46DA /* EBuyURLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBuyURLPath.swift; sourceTree = "<group>"; };
+		0C72E09026F62F5300FF46DA /* EbuyRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbuyRequestBuilder.swift; sourceTree = "<group>"; };
+		0C72E09226F6301D00FF46DA /* EbuyBaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbuyBaseRequest.swift; sourceTree = "<group>"; };
 		0C7ED7762615F63F00296B26 /* EBooksPrimeVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBooksPrimeVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7ED7782615F63F00296B26 /* EBooksPrimeVersionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBooksPrimeVersionApp.swift; sourceTree = "<group>"; };
 		0C7ED77A2615F63F00296B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -282,6 +289,24 @@
 			path = CacheImages;
 			sourceTree = "<group>";
 		};
+		0C72E08C26F625B300FF46DA /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				0C72E08B26F6259400FF46DA /* EbuyBook.app.Config.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		0C72E08D26F6289C00FF46DA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0C72E08E26F628C700FF46DA /* EBuyURLPath.swift */,
+				0C72E09026F62F5300FF46DA /* EbuyRequestBuilder.swift */,
+				0C72E09226F6301D00FF46DA /* EbuyBaseRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		0C7ED7772615F63F00296B26 /* EBooksPrimeVersion */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +348,8 @@
 		0C8F0ADB2578C02400E4259E = {
 			isa = PBXGroup;
 			children = (
+				0C72E08D26F6289C00FF46DA /* Network */,
+				0C72E08C26F625B300FF46DA /* Configs */,
 				0C4346542614923800D9CA8E /* SwiftPackage */,
 				0C5EA28825FCC45B00A6BAAB /* AmplifyConfig */,
 				0C8F0AE62578C02400E4259E /* EBuyBooks */,
@@ -787,8 +814,10 @@
 				0C5805FB25F2384600DFC79E /* BookDetailsView.swift in Sources */,
 				0C5E4A6125F63A6600E8296C /* CartItemsListVew.swift in Sources */,
 				0C5EA26A25FCBC7900A6BAAB /* amplify in Sources */,
+				0C72E08F26F628C700FF46DA /* EBuyURLPath.swift in Sources */,
 				0C5EA25725FCB4F000A6BAAB /* SignIn.swift in Sources */,
 				0C59F67D25F2B002007B6F03 /* BooksListView.swift in Sources */,
+				0C72E09326F6301D00FF46DA /* EbuyBaseRequest.swift in Sources */,
 				0C5D598925F29150007B5FC9 /* BookDetailsRow.swift in Sources */,
 				0C654234269C342900358FDA /* BookImageStore.swift in Sources */,
 				0C59F66F25F2A83A007B6F03 /* Book.swift in Sources */,
@@ -797,6 +826,7 @@
 				0C5A6EA225F4DD20003EDA88 /* AddToCartViewModel.swift in Sources */,
 				0C59F68325F2B1B6007B6F03 /* ProgressViewStyle.swift in Sources */,
 				0C8F0AE82578C02400E4259E /* AppDelegate.swift in Sources */,
+				0C72E09126F62F5300FF46DA /* EbuyRequestBuilder.swift in Sources */,
 				0C5A4A6925F35F3900538C9B /* Executor.swift in Sources */,
 				0C8F0AEA2578C02400E4259E /* SceneDelegate.swift in Sources */,
 				0C5E4A5925F6249500E8296C /* CartItemView.swift in Sources */,

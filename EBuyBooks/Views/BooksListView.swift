@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Amplify
 
 struct BooksListView: View {
     @State var searchString  = ""
@@ -32,7 +33,9 @@ struct BooksListView: View {
                 
                 } .toolbar {
                     ToolbarItem(id: "home", placement: ToolbarItemPlacement.bottomBar, showsByDefault: true){
-                        Image(systemName: "homekit")
+                        Button(action: {Amplify.Auth.signOut()}, label: {
+                            Image(systemName: "homekit")
+                        })
                     }
                 }          .navigationBarItems(leading:  HStack{
                 Text("EBuyBooks").foregroundColor(.white)

@@ -1,0 +1,12 @@
+//
+//  EbuyBook.app.Config.xcconfig
+//  EBuyBooks
+//
+//  Created by Ramesh kumar penta on 18/09/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+AWS_BASE_URL = execute-api.us-east-1.amazonaws.com/default
+

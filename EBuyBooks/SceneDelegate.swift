@@ -33,6 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window.rootViewController = UIHostingController(rootView: contentView)
             self.window = window
             window.makeKeyAndVisible()
+
         }
         AWSMobileClient.default().addUserStateListener(self) { (userState, additionInfo) in
             print("user state changed")
@@ -91,6 +92,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
+        
+
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
@@ -106,7 +109,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        
+
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
@@ -162,6 +165,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("Completed: \(data)")
         }.store(in: &cancellables)
     }
+    func signInWithWebUI() {
+       // Amplify.Auth.signOut()
+        Amplify.Auth.signInWithWebUI(presentationAnchor: ( UIApplication.shared.delegate as! AppDelegate).window!)
+            .resultPublisher
+            .sink {
+                if case let .failure(authError) = $0 {
+                    print("Sign in failed \(authError)")
+                }
+            }
+            receiveValue: { signResult in
+                
+                print("Sign in succeeded token\(AWSMobileClient.default().userSub)")
+                
+            }
+    }
+
+
 }
 
 

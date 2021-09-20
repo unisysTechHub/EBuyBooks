@@ -24,3 +24,10 @@ let addBookToCartUrlRequest =  {(url :String) throws -> URLRequest in
     return urlRequest
 
 }
+
+class EBuyAddToCartRequest :NSObject,EBuyBaseRequest {
+    var username : String?
+    var headers : [String: Any]?
+    func encode(to encoder: Encoder) throws {
+    }
+}

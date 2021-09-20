@@ -23,14 +23,18 @@ class EBuyBooksUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
+        
         let app = XCUIApplication()
         app.launch()
+        app.buttons["SignIn"].tap()
+        app.staticTexts[""].swipeUp(velocity: .slow)
+        XCUIApplication().alerts["“EBuyBooks” Wants to Use “amazoncognito.com” to Sign In"].scrollViews.otherElements.buttons["Continue"].tap()
+//        app.alerts["“EBuyBooks” Wants to Use “amazoncognito.com” to Sign In"].scrollViews.otherElements.buttons["Continue"].tap()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.tables.cells.element(boundBy: 1).swipeUp()
+        
     }
-
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
@@ -38,5 +42,12 @@ class EBuyBooksUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    func testClickOnCartNavigatesToBookDetailScreen() {
+                        
+                                    
+                        
+      
     }
 }

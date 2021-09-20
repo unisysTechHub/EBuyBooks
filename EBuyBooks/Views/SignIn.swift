@@ -20,6 +20,8 @@ struct SignIn: View {
     }
     
     func signInWithWebUI() {
+        Amplify.Auth.signOut()
+        
         Amplify.Auth.signInWithWebUI(presentationAnchor: ( UIApplication.shared.delegate as! AppDelegate).window!)
             .resultPublisher
             .sink {

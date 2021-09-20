@@ -28,7 +28,6 @@ let booksListUrlRequest =  {(url :String) throws -> URLRequest in
     urlRequest.addValue(jwtToken, forHTTPHeaderField: "Authorization")
     urlRequest.httpBody = try! JSONSerialization.data(withJSONObject: booksListRequestBody)
     return urlRequest
-
 }
 
     
