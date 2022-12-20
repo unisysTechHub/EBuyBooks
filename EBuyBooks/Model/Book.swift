@@ -9,7 +9,7 @@ import Foundation
 
 class Book : Decodable,Identifiable
 {
-    var bookId :String? = "B0001"
+    var   bookId   :String? = "B0001"
     var title : String? = "SWift programming"
     var author : String? = "Jhont"
     var yearOfPublish : Int? = 2000

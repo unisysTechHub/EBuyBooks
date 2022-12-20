@@ -24,7 +24,7 @@ struct BooksListView: View {
             ForEach(booksListViewModel.booksList, id : \.bookId)
                 { (bookModel) in
                 NavigationLink(
-                    destination: BookDetailsView(bookModel: bookModel)
+                    destination: BooksListRouter().makeBookDetailsview(book: bookModel)
                 ) {
                 BookDetailsView(bookModel: bookModel).frame(width: screen_width, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }

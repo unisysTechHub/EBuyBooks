@@ -12,7 +12,7 @@ class BookImageStore : ObservableObject
 {
     @Published var bookImage : UIImage? = UIImage(named: "swiftbookimage")
     var cancellables  = Set<AnyCancellable>()
-    var imageCache = ImageCache()
+    var imageCache = ImageCache.shared
     func loadImage(s3ObejctKey : String) {
         //store in a file or cache
         guard let cachedImage = imageCache.getCachedImage(forKey:  NSString("s3ObejctKey"))  else {

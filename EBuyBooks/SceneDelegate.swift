@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
+      Amplify.Auth.signOut()
         print("@Rames willConnect to function called")
         let contentView = ContentView()
         
@@ -42,6 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            {
            case .signedIn :
             jwtToken = additionInfo["token"]!
+            print("jwttoken \(jwtToken)")
             additionInfo.forEach { (key, value) in
                 print("Key : \(key)")
                 print("value : \(value)")
@@ -88,7 +90,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
-        Amplify.Auth.signOut()
+        Amplify.Auth.signOut().waitUntilFinished()
+        print("sceneDidDisconnect")
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

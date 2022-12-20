@@ -19,7 +19,7 @@ struct EBuyURL{
                 return "default"
             }
         }
-    }
+    } 
     enum APIRequest {
         case addToCart
         case cartItems

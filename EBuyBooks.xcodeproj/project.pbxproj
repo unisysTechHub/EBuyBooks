@@ -33,9 +33,18 @@
 		0C5EA2B425FCC56E00A6BAAB /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C5EA29625FCC4D900A6BAAB /* amplifyconfiguration.json */; };
 		0C654234269C342900358FDA /* BookImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C654233269C342900358FDA /* BookImageStore.swift */; };
 		0C654237269C5E6200358FDA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C654236269C5E6200358FDA /* ImageCache.swift */; };
+		0C6D689A275A764400E1A16D /* BooksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6D6899275A764400E1A16D /* BooksListRouter.swift */; };
 		0C72E08F26F628C700FF46DA /* EBuyURLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72E08E26F628C700FF46DA /* EBuyURLPath.swift */; };
 		0C72E09126F62F5300FF46DA /* EbuyRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72E09026F62F5300FF46DA /* EbuyRequestBuilder.swift */; };
 		0C72E09326F6301D00FF46DA /* EbuyBaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C72E09226F6301D00FF46DA /* EbuyBaseRequest.swift */; };
+		0C79234E27B3DACC00C73F83 /* EBuybooksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79234D27B3DACC00C73F83 /* EBuybooksAPI.swift */; };
+		0C79235027B3DB8700C73F83 /* EBuyBooksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79234F27B3DB8700C73F83 /* EBuyBooksDataSource.swift */; };
+		0C79235227B3DBFA00C73F83 /* AppURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79235127B3DBFA00C73F83 /* AppURLRequest.swift */; };
+		0C79235427B3E11F00C73F83 /* ExecutorModified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79235327B3E11F00C73F83 /* ExecutorModified.swift */; };
+		0C79235627B3E6E400C73F83 /* EbuyBookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79235527B3E6E400C73F83 /* EbuyBookInteractor.swift */; };
+		0C79235827B3E8F800C73F83 /* EBuyBooksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79235727B3E8F800C73F83 /* EBuyBooksPresenter.swift */; };
+		0C79235A27B3EC1100C73F83 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79235927B3EC1100C73F83 /* Util.swift */; };
+		0C79235C27B3F3F600C73F83 /* EbuyBookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79235B27B3F3F600C73F83 /* EbuyBookRouter.swift */; };
 		0C7ED7792615F63F00296B26 /* EBooksPrimeVersionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ED7782615F63F00296B26 /* EBooksPrimeVersionApp.swift */; };
 		0C7ED77B2615F63F00296B26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ED77A2615F63F00296B26 /* ContentView.swift */; };
 		0C7ED77D2615F64000296B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C7ED77C2615F64000296B26 /* Assets.xcassets */; };
@@ -52,6 +61,7 @@
 		0C8F0B0A2578C02600E4259E /* EBuyBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8F0B092578C02600E4259E /* EBuyBooksUITests.swift */; };
 		0C952C2625F7898700DD8A2D /* CartItemsListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C952C2525F7898700DD8A2D /* CartItemsListAPI.swift */; };
 		0C952C2B25F78B0B00DD8A2D /* CartItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C952C2A25F78B0B00DD8A2D /* CartItemsList.swift */; };
+		0CA0945927A7E0AD0092FCB7 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA0945827A7E0AD0092FCB7 /* Resource.swift */; };
 		5702FB92BB4B7D78C7197405 /* Pods_EBuyBooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0CFDC41781FED9E6FCD028 /* Pods_EBuyBooksTests.framework */; };
 		7AB2F82CE66F40183971F1F7 /* Pods_EBuyBooks_EBuyBooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98F5E3C018746238FAB2C3F /* Pods_EBuyBooks_EBuyBooksUITests.framework */; };
 		9DD322D53CF0CA7660BCCA57 /* Pods_EBuyBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4B63D5632DF80C84B75D01F /* Pods_EBuyBooks.framework */; };
@@ -114,10 +124,19 @@
 		0C5EA29625FCC4D900A6BAAB /* amplifyconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		0C654233269C342900358FDA /* BookImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookImageStore.swift; sourceTree = "<group>"; };
 		0C654236269C5E6200358FDA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		0C6D6899275A764400E1A16D /* BooksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRouter.swift; sourceTree = "<group>"; };
 		0C72E08B26F6259400FF46DA /* EbuyBook.app.Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EbuyBook.app.Config.xcconfig; sourceTree = "<group>"; };
 		0C72E08E26F628C700FF46DA /* EBuyURLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBuyURLPath.swift; sourceTree = "<group>"; };
 		0C72E09026F62F5300FF46DA /* EbuyRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbuyRequestBuilder.swift; sourceTree = "<group>"; };
 		0C72E09226F6301D00FF46DA /* EbuyBaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbuyBaseRequest.swift; sourceTree = "<group>"; };
+		0C79234D27B3DACC00C73F83 /* EBuybooksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBuybooksAPI.swift; sourceTree = "<group>"; };
+		0C79234F27B3DB8700C73F83 /* EBuyBooksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBuyBooksDataSource.swift; sourceTree = "<group>"; };
+		0C79235127B3DBFA00C73F83 /* AppURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURLRequest.swift; sourceTree = "<group>"; };
+		0C79235327B3E11F00C73F83 /* ExecutorModified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutorModified.swift; sourceTree = "<group>"; };
+		0C79235527B3E6E400C73F83 /* EbuyBookInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbuyBookInteractor.swift; sourceTree = "<group>"; };
+		0C79235727B3E8F800C73F83 /* EBuyBooksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBuyBooksPresenter.swift; sourceTree = "<group>"; };
+		0C79235927B3EC1100C73F83 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		0C79235B27B3F3F600C73F83 /* EbuyBookRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbuyBookRouter.swift; sourceTree = "<group>"; };
 		0C7ED7762615F63F00296B26 /* EBooksPrimeVersion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBooksPrimeVersion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7ED7782615F63F00296B26 /* EBooksPrimeVersionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBooksPrimeVersionApp.swift; sourceTree = "<group>"; };
 		0C7ED77A2615F63F00296B26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +165,8 @@
 		0C8F0B0B2578C02600E4259E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C952C2525F7898700DD8A2D /* CartItemsListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsListAPI.swift; sourceTree = "<group>"; };
 		0C952C2A25F78B0B00DD8A2D /* CartItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsList.swift; sourceTree = "<group>"; };
+		0CA0945827A7E0AD0092FCB7 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		0CFCE1B2277C27F8005D9052 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		4C0CFDC41781FED9E6FCD028 /* Pods_EBuyBooksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EBuyBooksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B14E849E8C9FD8A295906A9 /* Pods-EBuyBooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBuyBooksTests.release.xcconfig"; path = "Target Support Files/Pods-EBuyBooksTests/Pods-EBuyBooksTests.release.xcconfig"; sourceTree = "<group>"; };
 		5D9C9A5AF7738D96D971768D /* Pods-EBuyBooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBuyBooksTests.debug.xcconfig"; path = "Target Support Files/Pods-EBuyBooksTests/Pods-EBuyBooksTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -289,6 +310,14 @@
 			path = CacheImages;
 			sourceTree = "<group>";
 		};
+		0C6D6898275A762A00E1A16D /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				0C6D6899275A764400E1A16D /* BooksListRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		0C72E08C26F625B300FF46DA /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +332,22 @@
 				0C72E08E26F628C700FF46DA /* EBuyURLPath.swift */,
 				0C72E09026F62F5300FF46DA /* EbuyRequestBuilder.swift */,
 				0C72E09226F6301D00FF46DA /* EbuyBaseRequest.swift */,
+				0CA0945827A7E0AD0092FCB7 /* Resource.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0C79234227B3D5B800C73F83 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0C79234D27B3DACC00C73F83 /* EBuybooksAPI.swift */,
+				0C79234F27B3DB8700C73F83 /* EBuyBooksDataSource.swift */,
+				0C79235127B3DBFA00C73F83 /* AppURLRequest.swift */,
+				0C79235327B3E11F00C73F83 /* ExecutorModified.swift */,
+				0C79235527B3E6E400C73F83 /* EbuyBookInteractor.swift */,
+				0C79235727B3E8F800C73F83 /* EBuyBooksPresenter.swift */,
+				0C79235927B3EC1100C73F83 /* Util.swift */,
+				0C79235B27B3F3F600C73F83 /* EbuyBookRouter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -380,6 +425,8 @@
 		0C8F0AE62578C02400E4259E /* EBuyBooks */ = {
 			isa = PBXGroup;
 			children = (
+				0C79234227B3D5B800C73F83 /* Network */,
+				0C6D6898275A762A00E1A16D /* Routers */,
 				0C654235269C5E4100358FDA /* CacheImages */,
 				0C59F68125F2B19D007B6F03 /* ViewStyle */,
 				0C59F67325F2AB74007B6F03 /* ViewModels */,
@@ -604,6 +651,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-GB",
 			);
 			mainGroup = 0C8F0ADB2578C02400E4259E;
 			productRefGroup = 0C8F0AE52578C02400E4259E /* Products */;
@@ -808,6 +856,7 @@
 				0C4346552614923800D9CA8E /* SwiftPackage in Sources */,
 				0C5E4A6625F64B6200E8296C /* CartItemsListViewModel.swift in Sources */,
 				0C5A6EAC25F4E534003EDA88 /* AddToCart.swift in Sources */,
+				0CA0945927A7E0AD0092FCB7 /* Resource.swift in Sources */,
 				0C59F65825F2A03D007B6F03 /* BookPriceView.swift in Sources */,
 				0C59F66625F2A585007B6F03 /* BooksListAPI.swift in Sources */,
 				0C5D598F25F29474007B5FC9 /* DeviceConfigration.swift in Sources */,
@@ -815,9 +864,14 @@
 				0C5E4A6125F63A6600E8296C /* CartItemsListVew.swift in Sources */,
 				0C5EA26A25FCBC7900A6BAAB /* amplify in Sources */,
 				0C72E08F26F628C700FF46DA /* EBuyURLPath.swift in Sources */,
+				0C79235227B3DBFA00C73F83 /* AppURLRequest.swift in Sources */,
 				0C5EA25725FCB4F000A6BAAB /* SignIn.swift in Sources */,
+				0C6D689A275A764400E1A16D /* BooksListRouter.swift in Sources */,
 				0C59F67D25F2B002007B6F03 /* BooksListView.swift in Sources */,
 				0C72E09326F6301D00FF46DA /* EbuyBaseRequest.swift in Sources */,
+				0C79235627B3E6E400C73F83 /* EbuyBookInteractor.swift in Sources */,
+				0C79235427B3E11F00C73F83 /* ExecutorModified.swift in Sources */,
+				0C79235C27B3F3F600C73F83 /* EbuyBookRouter.swift in Sources */,
 				0C5D598925F29150007B5FC9 /* BookDetailsRow.swift in Sources */,
 				0C654234269C342900358FDA /* BookImageStore.swift in Sources */,
 				0C59F66F25F2A83A007B6F03 /* Book.swift in Sources */,
@@ -827,15 +881,19 @@
 				0C59F68325F2B1B6007B6F03 /* ProgressViewStyle.swift in Sources */,
 				0C8F0AE82578C02400E4259E /* AppDelegate.swift in Sources */,
 				0C72E09126F62F5300FF46DA /* EbuyRequestBuilder.swift in Sources */,
+				0C79235A27B3EC1100C73F83 /* Util.swift in Sources */,
+				0C79235827B3E8F800C73F83 /* EBuyBooksPresenter.swift in Sources */,
 				0C5A4A6925F35F3900538C9B /* Executor.swift in Sources */,
 				0C8F0AEA2578C02400E4259E /* SceneDelegate.swift in Sources */,
 				0C5E4A5925F6249500E8296C /* CartItemView.swift in Sources */,
 				0C952C2625F7898700DD8A2D /* CartItemsListAPI.swift in Sources */,
 				0C12B47E25F76B4D00309266 /* OrderSuccessView.swift in Sources */,
 				0C8F0AEC2578C02400E4259E /* ContentView.swift in Sources */,
+				0C79234E27B3DACC00C73F83 /* EBuybooksAPI.swift in Sources */,
 				0C59F67525F2AB93007B6F03 /* BooksListViewModel.swift in Sources */,
 				0C654237269C5E6200358FDA /* ImageCache.swift in Sources */,
 				0C1DBD8C25FA45010069BB6A /* BaseResponse.swift in Sources */,
+				0C79235027B3DB8700C73F83 /* EBuyBooksDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,6 +943,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0C8F0AF32578C02600E4259E /* Base */,
+				0CFCE1B2277C27F8005D9052 /* en-GB */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1026,6 +1085,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1087,6 +1147,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

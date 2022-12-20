@@ -20,7 +20,7 @@ class BookListViewModel : ObservableObject
         #warning("test warning message")
        
                 // self.showProgressBar = false
-
+        
         executeAPI(url: booksListurl, urlRequest: booksListUrlRequest, model: BooksListResponseModel.self) .receive(on: DispatchQueue.main).sink { (requestStaus) in
             self.showProgressBar = false
 

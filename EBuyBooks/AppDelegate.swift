@@ -39,7 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        Amplify.Auth.signOut()
+        print("application will terminate")
+        Amplify.Auth.signOut().waitUntilFinished()
+        print("application Signed out ")
 
     }
 }
