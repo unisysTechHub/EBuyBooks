@@ -26,6 +26,6 @@ steps:
     scheme: 'EBuyBooks'
     sdk: 'iphoneos'
     configuration: 'Release'
-    xcWorkspacePath: '**/*.xcworkspace'
+    xcWorkspacePath: 'EBuyBooks.xcworkspace'
     xcodeVersion: 'default'
 
