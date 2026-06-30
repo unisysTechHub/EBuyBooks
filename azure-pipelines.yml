@@ -16,7 +16,7 @@ steps:
 - task: Xcode@5
   inputs:
     actions: 'build'
-    scheme: 'YourSchemeName'
+    scheme: 'EBuyBooks'
     sdk: 'iphoneos'
     configuration: 'Release'
     xcWorkspacePath: '**/*.xcworkspace'
