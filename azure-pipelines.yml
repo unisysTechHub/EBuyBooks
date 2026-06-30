@@ -13,7 +13,14 @@ steps:
     xcodebuild -version
   displayName: 'Show installed Xcodes'
 
+- task: CocoaPods@0
+  displayName: 'Install CocoaPods Dependencies'
+  inputs:
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    forceRepo: false
+
 - task: Xcode@5
+  displayName: 'Build iOS Application'
   inputs:
     actions: 'build'
     scheme: 'EBuyBooks'
@@ -21,3 +28,4 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: '**/*.xcworkspace'
     xcodeVersion: 'default'
+
