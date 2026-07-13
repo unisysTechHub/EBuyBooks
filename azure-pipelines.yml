@@ -26,17 +26,28 @@ steps:
 
 # Build Archive
 - task: Xcode@5
-  displayName: 'Archive App'
+  displayName: 'Build iOS Application'
   inputs:
-    actions: 'archive'
-    xcWorkspacePath: '$(workspace)'
-    scheme: '$(scheme)'
-    configuration: '$(configuration)'
-    sdk: '$(sdk)'
-    packageApp: true
-    archivePath: '$(Build.ArtifactStagingDirectory)/EBuyBooks.xcarchive'
-    exportOptions: 'plist'
-    exportOptionsPlist: 'ExportOptions.plist'
+    actions: 'build'
+    configuration: 'Release'
+    sdk: 'iphoneos'
+    xcWorkspacePath: 'EBuyBooks.xcworkspace'
+    scheme: 'EBuyBooks'
+    xcodeVersion: 'default'
+
+    # Package
+    packageApp: false
+
+    # Signing
+    signingOption: 'nosign'
+
+    # Build destination
+    destinationPlatformOption: 'iOS'
+    destinationTypeOption: 'simulators'
+    destinationSimulators: 'iPhone 16'
+
+    # Advanced
+    useXcpretty: true
 
 # Publish IPA
 - task: PublishBuildArtifacts@1
