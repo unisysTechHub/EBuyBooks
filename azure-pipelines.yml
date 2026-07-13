@@ -18,10 +18,10 @@ steps:
   inputs:
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 - script: |
-    xcodebuild test \
+   xcodebuild test \
       -workspace $(workspace) \
       -scheme $(scheme) \
-      -destination 'platform=iOS Simulator,name=iPhone 18'
+      -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.5'
   displayName: 'Run Unit Tests'
 
 - task: Xcode@5
