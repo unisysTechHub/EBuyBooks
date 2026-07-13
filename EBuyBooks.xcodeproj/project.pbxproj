@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0C12B47E25F76B4D00309266 /* OrderSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C12B47D25F76B4D00309266 /* OrderSuccessView.swift */; };
 		0C1DBD8C25FA45010069BB6A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1DBD8B25FA45010069BB6A /* BaseResponse.swift */; };
-		0C434650261491E300D9CA8E /* SwiftPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0C43464F261491E300D9CA8E /* SwiftPackage */; };
-		0C4346552614923800D9CA8E /* SwiftPackage in Sources */ = {isa = PBXBuildFile; fileRef = 0C4346542614923800D9CA8E /* SwiftPackage */; };
 		0C5805FB25F2384600DFC79E /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5805FA25F2384600DFC79E /* BookDetailsView.swift */; };
 		0C59F65825F2A03D007B6F03 /* BookPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59F65725F2A03D007B6F03 /* BookPriceView.swift */; };
 		0C59F66625F2A585007B6F03 /* BooksListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59F66525F2A585007B6F03 /* BooksListAPI.swift */; };
@@ -204,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD322D53CF0CA7660BCCA57 /* Pods_EBuyBooks.framework in Frameworks */,
-				0C434650261491E300D9CA8E /* SwiftPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +391,6 @@
 			children = (
 				0C72E08D26F6289C00FF46DA /* Network */,
 				0C72E08C26F625B300FF46DA /* Configs */,
-				0C4346542614923800D9CA8E /* SwiftPackage */,
 				0C5EA28825FCC45B00A6BAAB /* AmplifyConfig */,
 				0C8F0AE62578C02400E4259E /* EBuyBooks */,
 				0C8F0AFD2578C02600E4259E /* EBuyBooksTests */,
@@ -565,7 +561,6 @@
 			);
 			name = EBuyBooks;
 			packageProductDependencies = (
-				0C43464F261491E300D9CA8E /* SwiftPackage */,
 			);
 			productName = EBuyBooks;
 			productReference = 0C8F0AE42578C02400E4259E /* EBuyBooks.app */;
@@ -852,7 +847,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4346552614923800D9CA8E /* SwiftPackage in Sources */,
 				0C5E4A6625F64B6200E8296C /* CartItemsListViewModel.swift in Sources */,
 				0C5A6EAC25F4E534003EDA88 /* AddToCart.swift in Sources */,
 				0CA0945927A7E0AD0092FCB7 /* Resource.swift in Sources */,
@@ -1398,12 +1392,3 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCSwiftPackageProductDependency section */
-		0C43464F261491E300D9CA8E /* SwiftPackage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftPackage;
-		};
-/* End XCSwiftPackageProductDependency section */
-	};
-	rootObject = 0C8F0ADC2578C02400E4259E /* Project object */;
-}
