@@ -101,7 +101,6 @@
 /* Begin PBXFileReference section */
 		0C12B47D25F76B4D00309266 /* OrderSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSuccessView.swift; sourceTree = "<group>"; };
 		0C1DBD8B25FA45010069BB6A /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
-		0C4346542614923800D9CA8E /* SwiftPackage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftPackage; path = ../SwiftPackage; sourceTree = "<group>"; };
 		0C5805FA25F2384600DFC79E /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
 		0C59F65725F2A03D007B6F03 /* BookPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPriceView.swift; sourceTree = "<group>"; };
 		0C59F66525F2A585007B6F03 /* BooksListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListAPI.swift; sourceTree = "<group>"; };
