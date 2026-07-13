@@ -29,9 +29,9 @@ steps:
   displayName: 'Verify Tools'
 - script: |
     xcodebuild \
-  -workspace EBuyBooks.xcworkspace \
-  -scheme EBuyBooks \
-  build
+    -workspace EBuyBooks.xcworkspace \
+    -scheme EBuyBooks \
+    build
   displayName: 'Build app'
 # Run Unit Tests
 - script: |
