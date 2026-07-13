@@ -33,7 +33,6 @@ steps:
     xcodebuild test \
       -workspace $(workspace) \
       -scheme $(scheme) \
-      -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.5'
   displayName: 'Run Unit Tests'
 
 # Build Archive
