@@ -31,6 +31,7 @@ steps:
     xcodebuild \
     -workspace EBuyBooks.xcworkspace \
     -scheme EBuyBooks \
+    -allowProvisioningUpdates
     build
   displayName: 'Build app'
 # Run Unit Tests
