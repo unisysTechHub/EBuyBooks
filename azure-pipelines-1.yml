@@ -1,0 +1,57 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'macOS-latest'
+
+variables:
+  workspace: 'EBuyBooks.xcworkspace'
+  scheme: 'EBuyBooks'
+  configuration: 'Release'
+  sdk: 'iphoneos'
+
+steps:
+
+# Checkout repository
+- checkout: self
+  clean: true
+
+# Install CocoaPods
+- script: |
+    sudo gem install cocoapods
+    pod install
+  displayName: 'Install CocoaPods'
+
+# Verify Xcode
+- script: |
+    xcodebuild -version
+    pod --version
+  displayName: 'Verify Tools'
+
+# Run Unit Tests
+- script: |
+    xcodebuild test \
+      -workspace $(workspace) \
+      -scheme $(scheme) \
+      -destination 'platform=iOS Simulator,name=iPhone 16'
+  displayName: 'Run Unit Tests'
+
+# Build Archive
+- task: Xcode@5
+  displayName: 'Archive App'
+  inputs:
+    actions: 'archive'
+    xcWorkspacePath: '$(workspace)'
+    scheme: '$(scheme)'
+    configuration: '$(configuration)'
+    sdk: '$(sdk)'
+    packageApp: true
+    archivePath: '$(Build.ArtifactStagingDirectory)/EBuyBooks.xcarchive'
+    exportOptions: 'plist'
+    exportOptionsPlist: 'ExportOptions.plist'
+
+# Publish IPA
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
