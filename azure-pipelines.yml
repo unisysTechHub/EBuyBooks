@@ -2,35 +2,56 @@ trigger:
 - main
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'macOS-latest'
+
+variables:
+  workspace: 'EBuyBooks.xcworkspace'
+  scheme: 'EBuyBooks'
+  configuration: 'Release'
+  sdk: 'iphoneos'
 
 steps:
-- script: |
-    echo "Installed Xcodes:"
-    ls -1 /Applications | grep Xcode
-    echo "Current developer directory:"
-    xcode-select -p
-    xcodebuild -version
-  displayName: 'Show installed Xcodes'
 
-- task: CocoaPods@0
-  displayName: 'Install CocoaPods Dependencies'
-  inputs:
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
+# Checkout repository
+- checkout: self
+  clean: true
+
+# Install CocoaPods
 - script: |
-   xcodebuild test \
+    sudo gem install cocoapods
+    pod install
+  displayName: 'Install CocoaPods'
+
+# Verify Xcode
+- script: |
+    xcodebuild -version
+    pod --version
+  displayName: 'Verify Tools'
+
+# Run Unit Tests
+- script: |
+    xcodebuild test \
       -workspace $(workspace) \
       -scheme $(scheme) \
       -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.5'
   displayName: 'Run Unit Tests'
 
+# Build Archive
 - task: Xcode@5
-  displayName: 'Build iOS Application'
+  displayName: 'Archive App'
   inputs:
-    actions: 'build'
-    scheme: 'EBuyBooks'
-    sdk: 'iphoneos'
-    configuration: 'Release'
-    xcWorkspacePath: 'EBuyBooks.xcworkspace'
-    xcodeVersion: 'default'
+    actions: 'archive'
+    xcWorkspacePath: '$(workspace)'
+    scheme: '$(scheme)'
+    configuration: '$(configuration)'
+    sdk: '$(sdk)'
+    packageApp: true
+    archivePath: '$(Build.ArtifactStagingDirectory)/EBuyBooks.xcarchive'
+    exportOptions: 'plist'
+    exportOptionsPlist: 'ExportOptions.plist'
 
+# Publish IPA
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
