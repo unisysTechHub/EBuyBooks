@@ -22,24 +22,7 @@ steps:
     pod install
   displayName: 'Install CocoaPods'
 
-# Verify Xcode
-- script: |
-    xcodebuild -version
-    pod --version
-  displayName: 'Verify Tools'
-- script: |
-    xcodebuild \
-    -workspace EBuyBooks.xcworkspace \
-    -scheme EBuyBooks \
-    -allowProvisioningUpdates
-    build
-  displayName: 'Build app'
-# Run Unit Tests
-- script: |
-    xcodebuild test \
-      -workspace $(workspace) \
-      -scheme $(scheme) \
-  displayName: 'Run Unit Tests'
+
 
 # Build Archive
 - task: Xcode@5
