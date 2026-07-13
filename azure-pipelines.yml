@@ -27,7 +27,12 @@ steps:
     xcodebuild -version
     pod --version
   displayName: 'Verify Tools'
-
+- script: |
+    xcodebuild \
+  -workspace EBuyBooks.xcworkspace \
+  -scheme EBuyBooks \
+  build
+  displayName: 'Build app'
 # Run Unit Tests
 - script: |
     xcodebuild test \
