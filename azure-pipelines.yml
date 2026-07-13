@@ -17,7 +17,12 @@ steps:
   displayName: 'Install CocoaPods Dependencies'
   inputs:
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-    forceRepo: false
+- script: |
+    xcodebuild test \
+      -workspace $(workspace) \
+      -scheme $(scheme) \
+      -destination 'platform=iOS Simulator,name=iPhone 18'
+  displayName: 'Run Unit Tests'
 
 - task: Xcode@5
   displayName: 'Build iOS Application'
